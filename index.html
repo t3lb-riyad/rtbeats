@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTB'S Eats</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <!--
+        DEVELOPER: Replace the placeholder icon below with your FIRST logo image.
+        This element is visually positioned on the FAR RIGHT.
+        Example: <img src="path/to/logo-first.png" alt="Logo">
+      -->
+      <!-- DEVELOPER: Replace href="#" with the actual URL you want the right logo to link to -->
+      <a href="#" class="logo logo-first">
+        <img src="/images/Picsart_26-06-16_16-02-58-057.png" alt="Logo">
+      </a>
+
+      <h1 class="restaurant-name">RTB'S Eats</h1>
+
+      <!--
+        DEVELOPER: Replace the placeholder icon below with your SECOND logo image.
+        This element is visually positioned on the FAR LEFT.
+        Example: <img src="path/to/logo-second.png" alt="Logo">
+      -->
+      <a href="https://make-it-self.vercel.app/#home" class="logo logo-second" target="_blank" rel="noopener">
+        <img src="/images/lb2.png" alt="Logo">
+      </a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <!-- DEVELOPER: Replace the background image URLs below in style.css under #hero -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="greeting" id="greeting">Welcome</p>
+    </div>
+  </section>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section id="menu">
+    <h2 class="section-title">Our Menu</h2>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Meal cards are injected via JavaScript -->
+    </div>
+  </section>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <!-- DEVELOPER: Insert meal image source below (dynamically loaded via JS) -->
+      <img id="modalImage" src="" alt="Meal Image">
+      
+      <h3 id="modalTitle"></h3>
+
+      <!-- ORDER MODULE -->
+      <div class="order" id="orderModule">
+        <button class="order-btn" id="orderBtn">Order Now</button>
+        <div class="order-form" id="orderForm">
+          <label for="customerName">Your Name</label>
+          <input type="text" id="customerName" placeholder="Enter your name" required>
+          <button class="confirm-btn" id="confirmBtn">Confirm Order</button>
+        </div>
+      </div>
+
+      <!-- CONFIRMATION SCREEN -->
+      <div class="confirmation" id="confirmationScreen">
+        <div class="confirmation-icon"><i class="fas fa-check-circle"></i></div>
+        <h3 class="confirmation-title">Order Confirmed!</h3>
+        <div class="confirmation-details">
+          <p class="conf-label">رقم الطلب</p>
+          <p class="conf-order-number" id="confOrderNumber">1</p>
+          <div class="conf-info">
+            <p><span>الاسم:</span> <span id="confName"></span></p>
+            <p><span>الوجبة:</span> <span id="confMeal"></span></p>
+          </div>
+        </div>
+        <div class="n8n-error" id="n8nError">
+          <i class="fas fa-store-slash"></i>
+          <span>لم يتم تسجيل طلب المطعم مغلق</span>
+        </div>
+        <button class="done-btn" id="doneBtn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FEEDBACK SECTION ===== -->
+  <section id="feedback" class="feedback">
+    <h2 class="section-title">رأيك يهمنا</h2>
+    <div class="feedback-container">
+      <textarea id="feedbackText" placeholder="مارأيك في مطعمنا ؟" rows="5"></textarea>
+      <button id="feedbackSubmit">Submit</button>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>&copy; 2026 RTB'S Eats. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== BOTTOM NAVIGATION (Liquid Glass) ===== -->
+  <nav class="bottom-nav" id="bottomNav">
+    <a href="#hero" aria-label="Home"><i class="fas fa-home"></i></a>
+    <a href="#menu" aria-label="Menu"><i class="fas fa-shopping-cart"></i></a>
+    <a href="#feedback" aria-label="Feedback"><i class="fas fa-exclamation-circle"></i></a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
