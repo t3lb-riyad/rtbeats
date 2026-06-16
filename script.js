@@ -192,27 +192,25 @@ feedbackSubmit.addEventListener('click', async () => {
     return;
   }
 
-  feedbackSubmit.disabled = true;
-  feedbackSubmit.textContent = 'Sending...';
+    feedbackSubmit.disabled = true;
+  feedbackSubmit.textContent = 'جاري الإرسال...';
 
   try {
     await fetch(N8N_FEEDBACK_WEBHOOK, {
       method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({
-        feedback: message,
-        timestamp: new Date().toISOString(),
-      }),
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ feedback: message, date: new Date().toISOString() }),
     });
-
-    alert('Thank you for your feedback!');
-    feedbackText.value = '';
-  } catch (error) {
-    alert('Network error. Please check your connection and try again.');
-    console.error('Feedback error:', error);
-  } finally {
-    feedbackSubmit.disabled = false;
-    feedbackSubmit.textContent = 'Submit';
+  } catch {
+    // إذا فشل الاتصال بـ n8n، احفظ محلياً
+    const saved = JSON.parse(localStorage.getItem('rtbeats_feedback') || '[]');
+    saved.push({ message, date: new Date().toISOString() });
+    localStorage.setItem('rtbeats_feedback', JSON.stringify(saved));
   }
+
+  alert('Thank you for your feedback!');
+  feedbackText.value = '';
+  feedbackSubmit.disabled = false;
+  feedbackSubmit.textContent = 'Submit';
 });
