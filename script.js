@@ -6,7 +6,7 @@
 const N8N_ORDER_WEBHOOK = 'https://shining-padding-willow.ngrok-free.dev/webhook/rtbeats-order';
 
 // FEEDBACK WEBHOOK: sends feedback to n8n when user submits.
-const N8N_FEEDBACK_WEBHOOK = 'https://shining-padding-willow.ngrok-free.dev/webhook-test/rtbeats-feedback';
+const N8N_FEEDBACK_WEBHOOK = 'https://shining-padding-willow.ngrok-free.dev/webhook/rtbeats-feedback';
 
 /* ===== MEAL DATA ===== */
 
